@@ -172,10 +172,10 @@ def main():
             "-f", "ip.txt",
             "-n", "1000",
             "-dn", "3",
-            "-tl", "500",
-            "-tll", "10",
+            "-cfcolo", "HKG,KHH,NRT",
+            "-tl", "200",
             "-tlr", "0",
-            "-sl", "5",
+            "-sl", "1",
             "-p", "0",
             "-o", f"{i + 1}.csv"
         ], timeout) for i in range(num_processes)]
