@@ -55,6 +55,12 @@ def huoqu():
     # 获取当前目录下所有CSV文件路径
     csv_files = glob.glob('./*.csv')
 
+    # 获取当前工作目录
+    current_directory = os.getcwd()
+
+    # 输出当前工作目录
+    print(f"当前运行目录是: {current_directory}")
+
     # 用于存储IP地址数据
     data = []
 
