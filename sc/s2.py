@@ -127,11 +127,11 @@ def huoqu():
         except requests.RequestException as e:
             # 处理请求错误
             print(f"Request error for IP {ip}: {e}")
-            IPSS.append(ip)
+            IPSS.append(f"{ip}:443#--{xl}--{country}-自选IP")
         except json.JSONDecodeError as e:
             # 处理JSON解析错误
             print(f"JSON decode error for IP {ip}: {e}")
-            IPSS.append(ip)
+            IPSS.append(f"{ip}:443#--{xl}--{country}-自选IP")
         xl += 1
     print("Results:")
     print(IPSS)
