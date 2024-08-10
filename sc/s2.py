@@ -141,7 +141,7 @@ def huoqu():
     print(IPSS)
 
     # 文件路径
-    file_path = '/root/workspace/st/yx.txt'
+    file_path = '/root/workspace/sc/yx.txt'
 
     try:
         # 打开文件进行写入操作
