@@ -113,25 +113,25 @@ def huoqu():
                 country = data.get("country", "")
 
                 if "美国" in data_str:
-                    result = f"{ip}:443#--{xl}--US-自选IP"
+                    result = f"{ip}:443#{xl}----US-自选IP"
                 elif "香港" in data_str:
-                    result = f"{ip}:443#--{xl}--CN-HK-自选IP"
+                    result = f"{ip}:443#{xl}----CN-HK-自选IP"
                 elif "台湾" in data_str:
-                    result = f"{ip}:443#--{xl}--CN-TW-自选IP"
+                    result = f"{ip}:443#{xl}----CN-TW-自选IP"
                 elif "日本" in data_str:
-                    result = f"{ip}:443#--{xl}--JP-自选IP"
+                    result = f"{ip}:443#{xl}----JP-自选IP"
                 else:
-                    result = f"{ip}:443#--{xl}--{country}-自选IP"
+                    result = f"{ip}:443#{xl}----{country}-自选IP"
                     
                 IPSS.append(result)
         except requests.RequestException as e:
             # 处理请求错误
             print(f"Request error for IP {ip}: {e}")
-            IPSS.append(f"{ip}:443#--{xl}--{country}-自选IP")
+            IPSS.append(f"{ip}:443#{xl}----自选IP")
         except json.JSONDecodeError as e:
             # 处理JSON解析错误
             print(f"JSON decode error for IP {ip}: {e}")
-            IPSS.append(f"{ip}:443#--{xl}--{country}-自选IP")
+            IPSS.append(f"{ip}:443#{xl}----自选IP")
         xl += 1
     print("Results:")
     print(IPSS)
