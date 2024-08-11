@@ -172,9 +172,9 @@ def main():
             "-f", "ip.txt",
             "-n", "1000",
             "-dn", "5",
-            "-tl", "200",
+            "-tl", "250",
             "-tlr", "0",
-            "-sl", "2",
+            "-sl", "1",
             "-p", "0",
             "-o", f"{i + 1}.csv"
         ], timeout) for i in range(num_processes)]
