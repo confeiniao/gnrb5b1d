@@ -43,7 +43,9 @@ def extract_and_set_permissions(tar_path, extract_path):
 # 运行命令并监控
 def run_command(args, timeout):
     try:
+        print(f"Running command: {' '.join(args)} with timeout {timeout} seconds")
         result = subprocess.run(args, cwd=extract_path, timeout=timeout, check=True)
+        print(f"Command completed with return code: {result.returncode}")
         return result.returncode
     except subprocess.TimeoutExpired:
         print(f"Process with args {args} timed out.")
@@ -51,6 +53,9 @@ def run_command(args, timeout):
     except subprocess.CalledProcessError as e:
         print(f"Process with args {args} failed with exit code {e.returncode}.")
         return e.returncode
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return -1
 
 def huoqu():
     # 获取当前目录下所有CSV文件路径
@@ -67,7 +72,6 @@ def huoqu():
             
             # 提取列名
             headers = lines[0].strip().split(',')
-            #print(f"Headers: {headers}")
 
             if 'IP 地址' in headers:
                 ip_index = headers.index('IP 地址')
@@ -85,9 +89,7 @@ def huoqu():
     # 去重并保存到变量IPS
     IPS = list(set(data))
 
-
     print(IPS)
-
 
     # 保存查询结果的列表
     IPSS = []
