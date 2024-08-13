@@ -172,7 +172,7 @@ def main():
         futures = [executor.submit(run_command, [
             "./CloudflareST",
             "-f", "ip.txt",
-            "-n", "1000",
+            "-n", "995",
             "-t", "20",
             "-dn", "2",
             "-tl", "150",
