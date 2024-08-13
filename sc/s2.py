@@ -13,7 +13,7 @@ working_directory = "/root/tsc/st/zfs"
 filename = "CloudflareST_linux_amd64.tar.gz"
 extract_path = os.path.join(working_directory, "CloudflareST")
 timeout = 6 * 60  # 6分钟超时
-num_processes = 5
+num_processes = 3
 
 # 获取最新版本的下载链接
 def get_latest_release_url():
@@ -108,7 +108,7 @@ def huoqu():
             if "error" in data:
                 # 异常返回，直接保存IP地址
                 IPSS.append('%s:443#自选IP' % ip)
-            else:
+            elif "country" in data:
                 # 正常返回，构建结果字符串
                 country = data.get("country", "")
 
@@ -172,7 +172,7 @@ def main():
             "-f", "ip.txt",
             "-n", "1000",
             "-dn", "5",
-            "-tl", "250",
+            "-tl", "150",
             "-tlr", "0",
             "-sl", "1",
             "-p", "0",
