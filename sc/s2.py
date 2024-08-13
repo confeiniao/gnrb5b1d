@@ -173,10 +173,11 @@ def main():
             "./CloudflareST",
             "-f", "ip.txt",
             "-n", "1000",
+            "-t", "20",
             "-dn", "2",
             "-tl", "150",
             "-tlr", "0",
-            "-sl", "3",
+            "-sl", "1",
             "-p", "0",
             "-o", f"{i + 1}.csv"
         ], timeout) for i in range(num_processes)]
