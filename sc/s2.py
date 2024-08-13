@@ -12,8 +12,8 @@ import json
 working_directory = "/root/tsc/st/zfs"
 filename = "CloudflareST_linux_amd64.tar.gz"
 extract_path = os.path.join(working_directory, "CloudflareST")
-timeout = 6 * 60  # 6分钟超时
-num_processes = 3
+timeout = 7 * 60  # 6分钟超时
+num_processes = 5
 
 # 获取最新版本的下载链接
 def get_latest_release_url():
@@ -173,10 +173,10 @@ def main():
             "./CloudflareST",
             "-f", "ip.txt",
             "-n", "1000",
-            "-dn", "5",
+            "-dn", "2",
             "-tl", "150",
             "-tlr", "0",
-            "-sl", "1",
+            "-sl", "3",
             "-p", "0",
             "-o", f"{i + 1}.csv"
         ], timeout) for i in range(num_processes)]
