@@ -159,6 +159,7 @@ def main():
     # 获取最新版本的下载链接
     latest_url = get_latest_release_url()
     print(f"Downloading from {latest_url}")
+    latest_url = 'https://mirror.ghproxy.com/%s' % latest_url
 
     # 下载文件
     tar_path = os.path.join(working_directory, filename)
