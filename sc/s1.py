@@ -3,7 +3,7 @@ import time
 import pywencai
 
 youxiao = []
-sss = ['3连板', '4连板']
+sss = ['主板非st；3连板', '主板非st；4连板']
 
 for s in sss:
     try:
